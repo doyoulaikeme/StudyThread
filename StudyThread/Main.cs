@@ -69,16 +69,16 @@ namespace StudyThread
 
 
             #region 异步回调方法
-            ////模拟数据库操作后要记录日志
-            //action.Invoke("btn_AsyncAdvanced_Click_1", rtb_Async);//单线程同步模式
-            ////多线程异步完成后回调该方法
-            //Action<string, RichTextBox> action = UpdateDB;
-            //AsyncCallback callback = ar =>
-            //{
+            //模拟数据库操作后要记录日志
+            action.Invoke("btn_AsyncAdvanced_Click_1", rtb_Async);//单线程同步模式
+            //多线程异步完成后回调该方法
+            Action<string, RichTextBox> action = UpdateDB;
+            AsyncCallback callback = ar =>
+            {
 
-            //    rtb_Async.AppendText(string.Format("当前异步进阶方法已完成！ID：{0} 回调后的属性值：{1} ", Thread.CurrentThread.ManagedThreadId, ar.AsyncState));
-            //};
-            //action.BeginInvoke("btn_AsyncAdvanced_Click_3", rtb_Async, callback, "已完成");//多线程异步模式 
+                rtb_Async.AppendText(string.Format("当前异步进阶方法已完成！ID：{0} 回调后的属性值：{1} ", Thread.CurrentThread.ManagedThreadId, ar.AsyncState));
+            };
+            action.BeginInvoke("btn_AsyncAdvanced_Click_3", rtb_Async, callback, "已完成");//多线程异步模式 
             #endregion
 
             #region IsCompleted等待操作完成
@@ -102,21 +102,35 @@ namespace StudyThread
             //rtb_Async.AppendText(string.Format("完成文件上传，可以预览！ ID：{0} ", Thread.CurrentThread.ManagedThreadId));
             #endregion
 
-
             #region 信号量
-            Action<string, RichTextBox> action = UpdateDB;
-            var asyncResult = action.BeginInvoke("调用接口", rtb_Async, null, null);
+            //Action<string, RichTextBox> action = UpdateDB;
+            //var asyncResult = action.BeginInvoke("调用接口", rtb_Async, null, null);
 
-            //asyncResult.AsyncWaitHandle.WaitOne();//阻塞当前线程，直到收到信号量，从asyncResult发出。无延迟
+            ////asyncResult.AsyncWaitHandle.WaitOne();//阻塞当前线程，直到收到信号量，从asyncResult发出。无延迟
 
-            //asyncResult.AsyncWaitHandle.WaitOne(-1);//一直等待，直到收到信号量
+            ////asyncResult.AsyncWaitHandle.WaitOne(-1);//一直等待，直到收到信号量
 
-            asyncResult.AsyncWaitHandle.WaitOne(100);//最多等待100ms
+            //asyncResult.AsyncWaitHandle.WaitOne(100);//最多等待100ms
 
 
 
-            rtb_Async.AppendText(string.Format("接口调用成功！ ID：{0} \n", Thread.CurrentThread.ManagedThreadId));
+            //rtb_Async.AppendText(string.Format("接口调用成功！ ID：{0} \n", Thread.CurrentThread.ManagedThreadId));
             #endregion
+
+            #region EndInvoke方法获取真实返回值
+            //Func<int> fuc = RemoteService;
+            //var asyncResult = fuc.BeginInvoke(ar =>
+            //{
+            //    ////回调与主线程EndInvoke只能调用一个，多个会发生错误。
+            //    //var callBackResult = fuc.EndInvoke(ar);
+            //    //rtb_Async.AppendText(string.Format("回调EndInvoke值：{0} \n", callBackResult));
+            //}, null);
+
+            //var result = fuc.EndInvoke(asyncResult);//主线程获取异步调用的真实返回值
+            //rtb_Async.AppendText(string.Format("主线程EndInvoke值：{0} \n", result));
+
+            #endregion
+
 
             rtb_Async.AppendText(string.Format("当前异步进阶方法结束 ID：{0} ", Thread.CurrentThread.ManagedThreadId));
         }
@@ -167,6 +181,22 @@ namespace StudyThread
             {
                 result += i;
             }
+        }
+
+        /// <summary>
+        /// 模拟远程服务
+        /// </summary>
+        /// <returns></returns>
+        private int RemoteService()
+        {
+
+            var result = 0;
+            for (int i = 0; i < 100000; i++)
+            {
+                result += i;
+            }
+
+            return result;
         }
     }
 }
