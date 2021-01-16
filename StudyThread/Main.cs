@@ -69,14 +69,15 @@ namespace StudyThread
 
 
             #region 异步回调方法
-            //模拟数据库操作后要记录日志
-            action.Invoke("btn_AsyncAdvanced_Click_1", rtb_Async);//单线程同步模式
             //多线程异步完成后回调该方法
             Action<string, RichTextBox> action = UpdateDB;
+            //模拟数据库操作后要记录日志
+            action.Invoke("btn_AsyncAdvanced_Click_1", rtb_Async);//单线程同步模式
+
             AsyncCallback callback = ar =>
             {
 
-                rtb_Async.AppendText(string.Format("当前异步进阶方法已完成！ID：{0} 回调后的属性值：{1} ", Thread.CurrentThread.ManagedThreadId, ar.AsyncState));
+                rtb_Async.AppendText(string.Format("当前异步进阶方法已完成！ID：{0} 回调后的属性值：{1} \n", Thread.CurrentThread.ManagedThreadId, ar.AsyncState));
             };
             action.BeginInvoke("btn_AsyncAdvanced_Click_3", rtb_Async, callback, "已完成");//多线程异步模式 
             #endregion

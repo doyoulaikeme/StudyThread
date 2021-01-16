@@ -8,3 +8,4 @@ E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.cspr
 E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.csproj.CoreCompileInputs.cache
 E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.exe
 E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.pdb
+E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.MutipleCompare.resources
