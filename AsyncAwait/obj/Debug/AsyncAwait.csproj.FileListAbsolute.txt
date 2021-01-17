@@ -1,0 +1,7 @@
+E:\.net学习\多线程研究\StudyThread\AsyncAwait\bin\Debug\AsyncAwait.exe.config
+E:\.net学习\多线程研究\StudyThread\AsyncAwait\bin\Debug\AsyncAwait.exe
+E:\.net学习\多线程研究\StudyThread\AsyncAwait\bin\Debug\AsyncAwait.pdb
+E:\.net学习\多线程研究\StudyThread\AsyncAwait\obj\Debug\AsyncAwait.csprojAssemblyReference.cache
+E:\.net学习\多线程研究\StudyThread\AsyncAwait\obj\Debug\AsyncAwait.csproj.CoreCompileInputs.cache
+E:\.net学习\多线程研究\StudyThread\AsyncAwait\obj\Debug\AsyncAwait.exe
+E:\.net学习\多线程研究\StudyThread\AsyncAwait\obj\Debug\AsyncAwait.pdb
