@@ -108,5 +108,15 @@ namespace StudyThread
 
             rtb_CompareText.AppendText(string.Format("btn_Compare_Click异步方法结束 ID：{0} \n", Thread.CurrentThread.ManagedThreadId));
         }
+
+        private void btn_ThreadSafety_Click(object sender, EventArgs e)
+        {
+            rtb_CompareText.Clear();
+            rtb_CompareText.AppendText(string.Format("btn_ThreadSafety_Click异步方法开始 ID：{0} \n", Thread.CurrentThread.ManagedThreadId));
+
+
+
+            rtb_CompareText.AppendText(string.Format("btn_ThreadSafety_Click异步方法结束 ID：{0} \n", Thread.CurrentThread.ManagedThreadId));
+        }
     }
 }
