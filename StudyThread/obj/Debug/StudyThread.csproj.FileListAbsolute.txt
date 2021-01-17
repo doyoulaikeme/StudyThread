@@ -1,7 +1,6 @@
 E:\.net学习\多线程研究\StudyThread\StudyThread\bin\Debug\StudyThread.exe.config
 E:\.net学习\多线程研究\StudyThread\StudyThread\bin\Debug\StudyThread.exe
 E:\.net学习\多线程研究\StudyThread\StudyThread\bin\Debug\StudyThread.pdb
-E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.csprojAssemblyReference.cache
 E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.Main.resources
 E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.Properties.Resources.resources
 E:\.net学习\多线程研究\StudyThread\StudyThread\obj\Debug\StudyThread.csproj.GenerateResource.cache
