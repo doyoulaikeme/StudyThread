@@ -7,4 +7,4 @@
 <p>4.Thread、ThreadPool、Task、Parallel等比较</p>
 <p>5.解决线程安全</p>
 <p>6.lock测试</p>
-<p>7.aysnc/await研究。</p>
+<p>7.async/await研究。</p>
